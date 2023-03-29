@@ -1,0 +1,16 @@
+{
+  "name": "mindpin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://kseniia90.github.io/MindPin",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d mindpin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
