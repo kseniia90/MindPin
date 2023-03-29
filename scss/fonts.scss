@@ -23,6 +23,14 @@ $font-medium: 'Inter Medium', sans-serif;
 $font-semiBold: 'Inter SemiBold', sans-serif;
 
 @font-face {
+    font-family: 'Inter Bold';
+    src: url(../fonts/Inter-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+$font-interBold: 'Inter Bold', sans-serif;
+
+@font-face {
     font-family: 'Neue Machina Ultrabold';
     src: url(../fonts/NeueMachina-Ultrabold.woff);
     font-weight: 800;
