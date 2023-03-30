@@ -38,18 +38,19 @@ body.lock {
         @media (max-width:992px) {
             margin-right: 50px;
         }
+        @media (max-width:576px) {
+            margin-right: 20px;
+        }
     }
     &__right {
         @include flex(flex-end, center, row);
-    //     @media (max-width:767px) {
-    //         display: none;
-    //    } 
+        @media (max-width:767px) {
+            display: none;
+        }
+        
         &-counter {
             margin-right: 24px;
             @include font($font-regular, 16px, 19px, #000000); 
-            @media (max-width:767px) {
-                display: none;
-            }
         }
         &-btn {
             height: 35px;
@@ -143,6 +144,12 @@ body.lock {
         }
         &-list {
             margin-bottom: 79px;
+            @media (max-width:992px) {
+                margin-bottom: 45px;
+            }
+            @media (max-width:576px) {
+                margin-bottom: 30px;
+            }
         }
     }
     &__img {
@@ -179,13 +186,21 @@ body.lock {
     padding: 12px 16px;
     border-radius: 12px;
     border: none;
+    @media (max-width:576px) {
+        font-size: 14px;
+        padding: 8px 12px;
+    } 
 }
 .white-btn {
     @include font($font-semiBold, 16px, 19px, #000000); 
     background-color: #FFFFFF;
     padding: 12px 16px;
     border-radius: 12px;
-    border: 1px solid rgba(51, 51, 51, 1)
+    border: 1px solid rgba(51, 51, 51, 1);
+    @media (max-width:576px) {
+        font-size: 14px;
+        padding: 8px 12px;
+    } 
 }
 .yellow-btn {
     @include font($font-semiBold, 16px, 19px, #333333); 
@@ -193,6 +208,10 @@ body.lock {
     padding: 12px 16px;
     border-radius: 12px;
     border: none;
+    @media (max-width:576px) {
+        font-size: 14px;
+        padding: 8px 12px;
+    } 
 }
 .btn-title {
     @include font($font-medium, 16px, 19px, #1F1E1E);
@@ -216,7 +235,7 @@ body.lock {
     }
 }
 .list {
-    @include flex(flex-start, center, row);
+    @include flex(flex-start, flex-start, row);
     &-item {
         position: relative;
         padding-left: 14px;
@@ -241,6 +260,9 @@ body.lock {
 .best-deal {
     @include flex(flex-start, center, column);
     gap: 24px;
+    @media (max-width:992px) {
+        margin-top: -30px;
+   }
     &__content {
         @include flex(flex-start, center, column);
         max-width: 848px;
@@ -261,6 +283,7 @@ body.lock {
         gap: 24px;
         @media (max-width:576px) {
             flex-wrap: wrap;
+            gap: 35px;
        }
        &__card {
         background: #F5F6F8;
@@ -268,32 +291,10 @@ body.lock {
         border-radius: 24px;
         padding: 0 32px 32px;
         &-imgblock {
-            position: relative;
-            min-height: 300px;
-            @media (max-width:1015px) {
-                min-height: 270px;
-           }
-            @media (max-width:992px) {
-                min-height: 250px;
-           }
-           @media (max-width:850px) {
-            min-height: 200px;
-           }
-           @media (max-width:700px) {
-            min-height: 170px;
-           } 
-           @media (max-width:576px) {
-            min-height: 300px;
-            }
+            @include flex(center, center, row);
             & img {
                 width: 90%;
-                position: absolute;
-                left: 10%;
-                top: -25%;
-                @media (max-width:992px) {
-                    left: 5%;
-                    top: -20%;
-               }
+                margin-top: -15%;
             }
         }
         &-title {
@@ -310,6 +311,7 @@ body.lock {
         margin-bottom: 61px;
         @media (max-width:768px) {
             flex-wrap: wrap;
+            margin-bottom: 10px;
        }
         &-main {
             @include flex(flex-start, flex-start, column);
@@ -551,6 +553,10 @@ body.lock {
     &__header {
         margin-bottom: 56px;
         @include flex(stretch, center, row);
+        @media (max-width:576px) {
+            @include flex(stretch, center, column);
+            margin-bottom: 20px;
+        }
         &-text {
             flex-basis: 75%;
         }
@@ -560,7 +566,7 @@ body.lock {
             @include flex(flex-end, flex-end, column);
             &-page {
                 @include font($font-regular, 16px, 24px, rgba(31, 30, 30, 0.48));
-                & span.activ-page {
+                & span.active-page {
                     @include font($font-medium, 25px, 35px, #1F1E1E);
                 }
                 margin-bottom: 16px;
@@ -582,10 +588,16 @@ body.lock {
     background: #F5F6F8;
     border-radius: 24px;
     @include flex(flex-start, stretch, row);
+    @media (max-width:576px) {
+        @include flex(flex-start, stretch, column);
+    }
     &__content {
         padding: 32px 0 31px 32px;
-        max-width: 588px;
+        width: 55%;
         @include flex(flex-start, flex-start, column);
+        @media (max-width:576px) {
+            width: 100%;
+        }
         &__main {
             flex: 1 0 auto;
         }
@@ -593,7 +605,10 @@ body.lock {
             margin-bottom: 16px;
         }
         &__text {
-            max-width: 418px;
+            width: 72%;
+            @media (max-width:576px) {
+                width: 100%;
+            }
         }
         &__autor {
             @include flex(flex-start, center, row);
@@ -617,11 +632,12 @@ body.lock {
         }
     }
     &__img {
-        max-width: 516px;
+        align-self: center;
+        max-width: 45%;
     }
 }
 .owl-nav {
-    //display: none;
+   // display: none; // приховати дефолтні кнопки слайдера 
 }
 .questions {
     &__content {
@@ -629,10 +645,10 @@ body.lock {
         text-align: center;
         margin: 168px auto 56px;
         @media (max-width:768px) {
-            margin: 110px;
+            margin: 90px;
        }
         @media (max-width:576px) {
-            margin: 70px;
+            margin: 50px;
         }
     }
     &-title {
@@ -650,12 +666,14 @@ body.lock {
         min-height: 652px;
         z-index: 1;
         width: 100%;
-        @media (max-width:1100px) {
-            @include flex(flex-end, center, row);
-       }
+        @include flex(flex-end, center, row);
        @media (max-width:992px) {
-        justify-content: center;
-    }
+        //justify-content: center; якщо треба буде відображати картинку
+        display: none;
+        }
+        @media (max-width:576px) {
+            display: none;
+        }
         & img {
             object-fit: fill;
             object-position: center;
@@ -768,7 +786,7 @@ body.lock {
         display: block;
         @include font($font-bold, 32px, 36px, #000000); 
         cursor: pointer;
-        padding: 32px 0;
+        padding: 32px 40px 32px 0;
         &::after {
             content: '';
             width: 100%;
@@ -826,9 +844,15 @@ body.lock {
         @media (max-width:992px) {
             margin-right: 50px;
         }
+        @media (max-width:576px) {
+            margin-right: 20px;
+        }
     }
     &__right {
         @include flex(flex-end, center, row);
+        @media (max-width:767px) {
+            display: none;
+        }
         &-counter {
             margin-right: 24px;
             @include font($font-regular, 16px, 19px, #000000); 
@@ -854,6 +878,10 @@ body.lock {
     &-main {
         max-width: 737px;
         @include flex(center, center, column);
+        padding: 0;
+        @media (max-width:740px) {
+            padding: 0 15px;
+        }
     }
     &-title {
         margin: 68px auto 16px;
@@ -863,6 +891,18 @@ body.lock {
         max-width: 548px;
         margin-bottom: 40px;
     }
+    &-btn {
+        @include flex(flex-start, center, row);
+        gap: 16px;
+        @media (max-width:576px) {
+            @include flex(flex-start, center, column);
+        }
+        & button {
+            @media (max-width:576px) {
+                margin: 0;
+            } 
+        }
+       }
     &-vector1 {
         position: absolute;
         top: 5%;
@@ -885,11 +925,18 @@ body.lock {
     min-height: 515px;
     background-color: #EFF2F6;
     position: relative;
+    @media(max-width: 992px){
+        min-height: 450px;
+    }
+    @media(max-width: 576px){
+        min-height: 300px;
+    }
     &-play {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        border: none;
     }
 }
 .prices {
@@ -903,6 +950,12 @@ body.lock {
     }
     &-subtitle {
         margin: 168px auto 40px;
+        @media(max-width: 992px){
+            margin: 80px auto 40px;
+        }
+        @media(max-width: 576px){
+            margin: 50px auto 30px;
+        }
     }
     &-title {
         max-width: 716px;
@@ -910,6 +963,12 @@ body.lock {
     }
     &-text {
         margin-bottom: 56px;
+        @media(max-width: 992px){
+            margin-bottom: 36px;
+        }
+        @media(max-width: 576px){
+            margin-bottom: 26px;
+        }
     }
     &__infoblock {
         @include flex(flex-start, center, row);
@@ -949,15 +1008,33 @@ body.lock {
         }
         &-title {
             @include font($font-bold, 40px, 44px, inherit);
+            @media(max-width: 992px){
+                font-size: 36px;
+            }
+            @media(max-width: 576px){
+                font-size: 28px;
+            }
         }
         &-text {
             opacity: 0.64;
             margin-bottom: 32px;
+            @media(max-width: 576px){
+                margin-bottom: 24px;
+            }
         }
         &-price {
             margin-bottom: 24px;
+            @media(max-width: 576px){
+                margin-bottom: 16px;
+            }
             &-bold {
                 @include font($font-bold, 32px, 36px, inherit);
+                @media(max-width: 992px){
+                    font-size: 28px;
+                }
+                @media(max-width: 576px){
+                    font-size: 26px;
+                }
             } 
             &-mo {
                 opacity: 0.64;
@@ -996,25 +1073,23 @@ body.lock {
         width: 100%;
         margin-bottom: 61px;
         max-height: 295px;
-        @media (max-width:768px) {
-            flex-wrap: wrap;
+        @media (max-width:992px) {
+            max-height: 100%;
        }
         &-main {
             @include flex(flex-start, flex-start, column);
             padding: 32px 19px 32px 32px;
             max-width: 498px;
-            @media (max-width:768px) {
+            @media (max-width:992px) {
                 padding: 32px;
+                max-width: 100%;
            }
-        }
-        &-content {
-            flex: 1 0 auto;
         }
         &-title {
             color: #000000;
             margin-bottom: 16px;
             width: 498px;
-            @media (max-width:768px) {
+            @media (max-width:992px) {
                 width: 100%;;
            }
         }
@@ -1022,8 +1097,9 @@ body.lock {
             color: #1F1E1EA3;
             margin-bottom: 40px;
             width: 466px;
-            @media (max-width:768px) {
-                width: 100%;;
+            @media (max-width:992px) {
+                width: 100%;
+                margin-bottom: 0;
            }
         }
         &-img {
@@ -1031,12 +1107,17 @@ body.lock {
             margin: 0 auto;
             @media (max-width:992px) {
                 display: none;
+                flex: 0 1 auto;
            }
             & img {
                 object-fit:cover;
                 object-position: center;
                 position: relative;
                 right: -35px;
+                @media (max-width:1150px) {
+                    right: 0;
+                    width: 100%;
+               }
             }
         }
         &-after {
@@ -1058,6 +1139,9 @@ body.lock {
     }
 }
 .skills {
+    @media (max-width:992px) {
+        margin-top: -70px;
+   }
     &__content {
         @include flex(center, center, column);
         max-width: 983px;
@@ -1071,33 +1155,26 @@ body.lock {
     &-text {
         margin-bottom: 44px;
     }
-    // &-logo {
-    //     position: relative;
-    //     &-arrow {
-    //         position: absolute;
-    //         top: 80px;
-    //         left: -330px;
-    //         @media (max-width:1104px) {
-    //             display: none;
-    //        }
-            
-    //     }
-    // }
     &-arrow {
         position: relative;
-        max-width: 830px;
+        width: 81%;
+        @media (max-width:1100px) {
+            display: none;
+       }
         &-img {
+            width: 100%;
+            height: 118px;
             position: absolute;
-            top: -80px;
-            left: -415px;
-            
+            top:-80px;
+            left: 0;
         }
     }
     &__infoblock {
         @include flex(space-between, center, row);
         margin-top: 32px;
         gap: 15px;
-        @media (max-width:576px) {
+        @media (max-width:745px) {
+            justify-content: center;
             flex-wrap: wrap;
        }
        &__card {
@@ -1133,6 +1210,12 @@ body.lock {
     @include flex(flex-start, center, column);
     margin-top: 168px;
     margin-bottom: 61px;
+    @media(max-width: 992px){
+        margin: 80px auto 40px;
+    }
+    @media(max-width: 576px){
+        margin: 50px auto 30px;
+    }
     &__content {
         @include flex(center, flex-start, column);
         max-width: 983px;
@@ -1149,14 +1232,11 @@ body.lock {
         width: 100%;
         padding: 32px;
         z-index: 4;
-        @media (max-width:768px) {
-            flex-wrap: wrap;
-       }
         &-main {
             @include flex(space-between, flex-start, row);
             width: 100%;
             @media (max-width:768px) {
-                padding: 32px;
+                //padding: 32px;
            }
         }
         &-content {
@@ -1165,23 +1245,26 @@ body.lock {
         &-title {
             color: #000000;
             margin-bottom: 16px;
-            width: 768px;
+            max-width: 768px;
             @media (max-width:768px) {
-                width: 100%;;
+               max-width: 100%;;
            }
         }
         &-text {
             color: #1F1E1EA3;
             margin-bottom: 40px;
-            width: 485px;
+            max-width: 485px;
             @media (max-width:768px) {
-                width: 100%;;
+                max-width: 100%;;
            }
         }
         &__autor {
             flex: 0 1 31%;
-            text-align: right;
-            @include flex(flex-start, center, row);
+            min-width: 130px;
+            @include flex(flex-end, center, row);
+            @media (max-width:768px) {
+                @include flex(flex-start, flex-end, column);
+           }
             &-img {
                 width: 48px;
                 height: 48px;
@@ -1192,6 +1275,9 @@ body.lock {
             }
             &-info {
                 @include flex(flex-start, flex-start, column);
+                @media (max-width:768px) {
+                    @include flex(flex-start, flex-end, column);
+               }
             }
             &-name {
                 @include font($font-semiBold, 16px, 24px, #1F1E1E);
@@ -1201,11 +1287,14 @@ body.lock {
             }
         }
         &-listbox {
-            @include flex(center, flex-start, row);
+            @include flex(space-between, flex-start, row);
+            @media (max-width:992px) {
+                flex-wrap: wrap;
+           }
         }
         &-item {
             @include flex(space-between, center, column);
-            width: 100%;
+            padding-left: 32px;
             &-title {
                 @include font($font-medium, 16px, 24px,  #1F1E1E);
                 position: relative;
@@ -1240,6 +1329,9 @@ body.lock {
         }
         &-img {
             position: relative;
+            @media (max-width:992px) {
+                display: none;
+           }
             & img {
                 position: absolute;
                 top: -290px;
@@ -1270,6 +1362,9 @@ body.lock {
     @include flex(center, center, row);
     position: relative;
     margin-bottom: 24px;
+    @media (max-width:992px) {
+        margin-top: -70px;
+   }
     &-main {
         max-width: 819px;
         @include flex(center, center, column);
@@ -1286,20 +1381,29 @@ body.lock {
         position: absolute;
         top: -70px;
         left: -20px;
+        @media(max-width: 996px){
+            display: none;
+        }
     }
     &-vector2 {
         position: absolute;
         top: 50px;
         right: 0;
+        @media(max-width: 996px){
+            display: none;
+        }
     }
 
     &-body {
-        width: 460px;
+        min-width: 460px;
+        @media(max-width: 480px){
+            min-width: 0;
+        }
         & form {
             width: 100%;
             @include flex(stretch, stretch, column);
             gap: 16px;
-            & input, select {
+            & input {
             background-color: #EFEFEF;
             padding: 16px;
             border-radius: 12px;
@@ -1314,6 +1418,9 @@ body.lock {
 .course__select {
     position: relative;
     & select {
+        background-color: #EFEFEF;
+        padding: 16px 45px 16px 16px;
+        border-radius: 12px;
         @include font($font-regular, 16px, 19px,  #333333);
         border: none;
         width: 100%;
@@ -1352,15 +1459,19 @@ body.lock {
         @include flex(stretch, stretch, column);
         margin-top: 64px;
         gap: 32px;
+        @media (max-width:992px) {
+            gap: 20px;
+        }
+
     }
     &__good {
         min-height: 287px;
         box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.06);
         border-radius: 24px;
         @include flex(flex-start, flex-start, row);
-       @media (max-width:576px) {
+        @media (max-width:576px) {
         @include flex(space-between, center, column);
-    }
+        }
     }
 }
 .good {
@@ -1377,14 +1488,28 @@ body.lock {
             max-width: 300px;
             margin-bottom: 24px;
        }
+       &-btn {
+        @include flex(flex-start, flex-start, row);
+        gap: 16px;
+        @media (max-width:992px) {
+           @include flex(flex-start, flex-start, column);
+        }
+        @media (max-width:576px) {
+            @include flex(flex-start, flex-start, row);
+        }
+       }
     }
     &__img {
         flex: 1 1 50%;
         align-self: center;
         @include flex(center, center, row);
         min-height: 287px;
+        width: 100%;
         background: #EFF2F6;
         border-radius:  24px;
+        @media (max-width:576px) {
+            min-height: 200px;
+        }
         &-main {
             max-width:100%;
             min-height: 100px;
@@ -1450,7 +1575,10 @@ body.lock {
     margin: 40px auto 72px;
     @include flex(flex-start, flex-start, row);
     gap: 82px;
-    @media (max-width:576px) {
+    @media (max-width:992px) {
+        gap: 40px;
+    }
+    @media (max-width:768px) {
         @include flex(space-between, center, column);
     }
     &__content {
@@ -1473,6 +1601,9 @@ body.lock {
         &-text {
             max-width: 300px;
             margin-bottom: 24px;
+            @media (max-width:768px) {
+                max-width: 100%;
+            }
        }
     }
     &__img {
@@ -1481,6 +1612,13 @@ body.lock {
         @include flex(center, center, row);
         min-height: 494px;
         background: #EFF2F6;
+        @media (max-width:768px) {
+            min-height: 400px;
+            width: 100%;
+        }
+        @media (max-width:576px) {
+            min-height: 300px;
+        }
         &-main {
             max-width:100%;
             min-height: 100px;
@@ -1532,14 +1670,20 @@ body.lock {
         &-title {
             margin:24px auto 8px;
             @include font($font-bold, 32px, 36px, #000000); 
-        }
-        
+        } 
     }
     &__img {
         align-self: center;
         @include flex(center, center, row);
         min-height: 494px;
         background: #EFF2F6;
+        @media (max-width:768px) {
+            min-height: 400px;
+            width: 100%;
+        }
+        @media (max-width:576px) {
+            min-height: 300px;
+        }
         &-main {
             max-width:100%;
             min-height: 100px;

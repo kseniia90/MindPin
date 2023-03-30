@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "deploy": "gh-pages -d mindpin"
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "",
