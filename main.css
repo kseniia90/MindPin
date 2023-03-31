@@ -685,6 +685,12 @@ body.lock {
 .list-item:not(:last-child) {
   margin-right: 24px;
 }
+@media (max-width: 576px) {
+  .list-item {
+    align-items: flex-start;
+    font-size: 14px;
+  }
+}
 .list-item::before {
   content: "";
   position: absolute;
@@ -907,10 +913,6 @@ body.lock {
   margin-bottom: 16px;
 }
 .steps_btn-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
   margin-bottom: 32px;
 }
 .steps__media {
@@ -2004,8 +2006,21 @@ body.lock {
   flex-direction: row;
   width: 100%;
 }
+@media (max-width: 576px) {
+  .content__banner-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
 .content__banner-content {
   flex: 1 0 69%;
+}
+@media (max-width: 576px) {
+  .content__banner-content {
+    order: 2;
+  }
 }
 .content__banner-title {
   color: #000000;
@@ -2079,9 +2094,10 @@ body.lock {
 }
 .content__banner-listbox {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: row;
+  gap: 3%;
 }
 @media (max-width: 992px) {
   .content__banner-listbox {
@@ -2094,6 +2110,11 @@ body.lock {
   align-items: center;
   flex-direction: column;
   padding-left: 32px;
+}
+@media (max-width: 992px) {
+  .content__banner-item {
+    margin-top: 16px;
+  }
 }
 .content__banner-item-title {
   font-size: 16px;

@@ -243,6 +243,10 @@ body.lock {
         &:not(:last-child) {
             margin-right: 24px;
         }
+        @media (max-width:576px) {
+            align-items: flex-start;
+            font-size: 14px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -405,7 +409,6 @@ body.lock {
             margin-bottom: 16px;
         }
         &-list {
-            @include flex(center, center, row);
             margin-bottom: 32px;
         }
     }
@@ -1235,12 +1238,15 @@ body.lock {
         &-main {
             @include flex(space-between, flex-start, row);
             width: 100%;
-            @media (max-width:768px) {
-                //padding: 32px;
+            @media (max-width:576px) {
+                @include flex(flex-start, flex-end, column);
            }
         }
         &-content {
             flex: 1 0 69%;
+            @media (max-width:576px) {
+                order: 2;
+           }
         }
         &-title {
             color: #000000;
@@ -1287,7 +1293,9 @@ body.lock {
             }
         }
         &-listbox {
-            @include flex(space-between, flex-start, row);
+            @include flex(center, flex-start, row);
+            gap: 3%;
+
             @media (max-width:992px) {
                 flex-wrap: wrap;
            }
@@ -1295,6 +1303,9 @@ body.lock {
         &-item {
             @include flex(space-between, center, column);
             padding-left: 32px;
+            @media (max-width:992px) {
+                margin-top: 16px;
+           }
             &-title {
                 @include font($font-medium, 16px, 24px,  #1F1E1E);
                 position: relative;
