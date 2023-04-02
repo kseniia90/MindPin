@@ -88,6 +88,7 @@ body.lock {
     margin-top: 30px;
     @media (max-width:992px) {
         flex-wrap: wrap;
+        justify-content: center;
     }
     @media (max-width:576px) {
         
@@ -167,6 +168,7 @@ body.lock {
 .title {
     @include font($font-ultraBold, 56px, 60px, #1F1E1E); 
     text-transform: uppercase; 
+    //font-weight: 800;
     @media (max-width:992px) {
         font-size: 46px;
     } 

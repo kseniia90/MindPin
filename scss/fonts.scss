@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Inter Regular';
-    src: url(../fonts/Inter-Regular.ttf);
+    src: url(./fonts/Inter-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
@@ -8,7 +8,7 @@ $font-regular: 'Inter Regular', sans-serif;
 
 @font-face {
     font-family: 'Inter Medium';
-    src: url(../fonts/Inter-Medium.ttf);
+    src: url(./fonts/Inter-Medium.ttf);
     font-weight: 500;
     font-style: normal;
 }
@@ -16,7 +16,7 @@ $font-medium: 'Inter Medium', sans-serif;
 
 @font-face {
     font-family: 'Inter SemiBold';
-    src: url(../fonts/Inter-SemiBold.ttf);
+    src: url(./fonts/Inter-SemiBold.ttf);
     font-weight: 600;
     font-style: normal;
 }
@@ -24,24 +24,23 @@ $font-semiBold: 'Inter SemiBold', sans-serif;
 
 @font-face {
     font-family: 'Inter Bold';
-    src: url(../fonts/Inter-Bold.ttf);
+    src: url(./fonts/Inter-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 $font-interBold: 'Inter Bold', sans-serif;
 
 @font-face {
-    font-family: 'Neue Machina Ultrabold';
-    src: url(../fonts/NeueMachina-Ultrabold.woff);
-    font-weight: 800;
-    font-style: normal;
-}
-$font-ultraBold: 'Neue Machina Ultrabold', sans-serif;
-
-@font-face {
     font-family: 'Neue Machina Bold';
-    src: url(../fonts/NeueMachina-Bold.woff);
+    src: url(./fonts/NeueMachina-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 $font-bold: 'Neue Machina Bold', sans-serif;
+@font-face {
+    font-family: 'Neue Machina Ultrabold';
+    src: url(./fonts/NeueMachina-Ultrabold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+$font-ultraBold: 'Neue Machina Ultrabold', sans-serif;
